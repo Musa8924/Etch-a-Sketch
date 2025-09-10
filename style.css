@@ -1,0 +1,59 @@
+/* styles.css */
+:root{
+  --cols: 16;
+  --container-size: 960px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #f7f7fb;
+  padding: 20px;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f0f0f0;
+}
+
+.grid-container {
+  width: var(--container-size);
+  height: var(--container-size);
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #ddd;
+}
+
+.cell {
+  flex: 0 0 calc(100% / var(--cols));
+  aspect-ratio: 1 / 1;
+  border: 1px solid #eee;
+  transition: background-color 0.1s ease;
+}
+
+.cell.hovered {
+  background-color: #333;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  :root { --container-size: 90vw; }
+}
